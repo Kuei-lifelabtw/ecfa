@@ -98,7 +98,7 @@ $(function(){
                         $("#table-item-"+source+" ol").append(
                             '<li><a target="_blank" href="'+arr.cat_first[firstIndex].cat_second[secondIndex].item[i].url+'">'+
                             arr.cat_first[firstIndex].cat_second[secondIndex].item[i].description+
-                            '</a> <b class="caret cpc"></b>\
+                            '</a> <a href="#" class="label label-default cpc">CPC內容</a>\
         <div class="alert alert-dismissable alert-warning hide">'+arr.cat_first[firstIndex].cat_second[secondIndex].item[i].text+
                             '</div></li>'
                         );
@@ -116,7 +116,7 @@ $(function(){
                     $("#table-item-"+source).append(
                         '<ol><li><a target="_blank" href="'+arr.cat_first[firstIndex].cat_second[secondIndex].item.url+'">'+
                         arr.cat_first[firstIndex].cat_second[secondIndex].item.description+
-                        '</a> <b class="caret cpc"></b>\
+                        '</a> <a href="#" class="label label-default cpc">CPC內容</a>\
         <div class="alert alert-dismissable alert-warning hide">'+arr.cat_first[firstIndex].cat_second[secondIndex].item.text+
                         '</div></li></ol>'
                     );
@@ -135,7 +135,7 @@ $(function(){
                         $("#table-item-"+source+" ol").append(
                             '<li><a target="_blank" href="'+arr.cat_first[firstIndex].cat_second.item[i].url+'">'+
                             arr.cat_first[firstIndex].cat_second.item[i].description+
-                            '</a> <b class="caret cpc"></b>\
+                            '</a> <a href="#" class="label label-default cpc">CPC內容</a>\
         <div class="alert alert-dismissable alert-warning hide">'+arr.cat_first[firstIndex].cat_second.item[i].text+
                             '</div></li>'
                         );
@@ -153,7 +153,7 @@ $(function(){
                     $("#table-item-"+source).append(
                         '<ol><li><a target="_blank" href="'+arr.cat_first[firstIndex].cat_second.item.url+'">'+
                         arr.cat_first[firstIndex].cat_second.item.description+
-                        '</a> <b class="caret cpc"></b>\
+                        '</a> <a href="#" class="label label-default cpc">CPC內容</a>\
         <div class="alert alert-dismissable alert-warning hide">'+arr.cat_first[firstIndex].cat_second.item.text+
                         '</div></li></ol>'
                     );
@@ -172,8 +172,8 @@ $(function(){
         $("#table-promise-"+source).html('');
     };
     
-    $(document).on("click",".cpc",function(){
-        //console.log('cpc click');
+    $(document).on("click",".cpc",function(e){
+        e.preventDefault();
         if($(this).siblings("div.alert").hasClass("hide")) $(this).siblings("div.alert").removeClass("hide");
         else $(this).siblings("div.alert").addClass("hide");
     });
@@ -187,7 +187,8 @@ $(function(){
         }
     });
     
-    $(document).on("click",".item-first-tw",function(){
+    $(document).on("click",".item-first-tw",function(e){
+        e.preventDefault();
         firstIndex = $(this).attr('tabindex');
         $("#cat-first-title-tw").text($(this).text());
         $("#cat-second-title-tw").text('細類');
@@ -208,7 +209,8 @@ $(function(){
         }
     });
     
-    $(document).on("click",".item-second-tw",function(){
+    $(document).on("click",".item-second-tw",function(e){
+        e.preventDefault();
         secondIndex = $(this).attr('tabindex');
         $("#cat-second-title-tw").text($(this).text());        
         cleanTR('tw');        
@@ -224,7 +226,8 @@ $(function(){
          }
     });
     
-    $(document).on("click",".item-first-cn",function(){
+    $(document).on("click",".item-first-cn",function(e){
+        e.preventDefault();
         firstIndex = $(this).attr('tabindex');
         $("#cat-first-title-cn").text($(this).text());
         $("#cat-second-title-cn").text('細類');
@@ -243,7 +246,8 @@ $(function(){
         }
     });
     
-    $(document).on("click",".item-second-cn",function(){
+    $(document).on("click",".item-second-cn",function(e){
+        e.preventDefault();
         secondIndex = $(this).attr('tabindex');
         $("#cat-second-title-cn").text($(this).text());
         cleanTR('cn');        
